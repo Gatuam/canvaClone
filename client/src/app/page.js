@@ -10,7 +10,7 @@ import RecentDesigns from "./components/homeCom/recentDesign";
 export default function Home() {
   return (
     <div className="w-full h-screen flex  ">
-      <div className="w-[6%] h-screen bg-[#11111120]">
+      <div className="w-[8%] h-screen bg-[#11111120]">
         <SideBar></SideBar>
       </div>
 

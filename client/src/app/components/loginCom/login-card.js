@@ -2,11 +2,13 @@
 import { signIn } from "next-auth/react";
 import { Button } from "../ui/button";
 
+
 function LoginCard() {
   return (
     <div
-      className="w-110  bg-[#ffffffd5] border border-[#18181808] rounded-2xl flex justify-center items-center p-4
-        shadow-[_0px_1px_1px_0px_rgba(0,0,0,0.05),0_4px_6px_rgba(34,42,53,0.04),0_24px_68px_rgba(47,48,55,0.04),0_2px_3px_rgba(0,0,0,0.04)]"
+      className="w-110  bg-[#f7f6ff] border border-[#5a44d818] rounded-2xl flex justify-center items-center p-4
+      shadow-[_0px_1px_1px_0px_rgba(0,0,0,0.05),0_4px_6px_rgba(34,42,53,0.04),0_24px_68px_rgba(47,48,55,0.04),0_2px_3px_rgba(0,0,0,0.04)]
+      "
     >
       <div className="flex p-8 flex-col justify-center items-center">
         <h1 className="text-2xl font-bold tracking-tigh text-neutral-700 ">
@@ -20,7 +22,7 @@ function LoginCard() {
             await signIn("google", { callbackUrl: "/" });
           }}
           variant={"destructive"}
-          className="text-neutral-700 border border-[#11111114] cursor-pointer hover:scale-[1.05] transition-all duration-300 ease-in 
+          className="text-neutral-700 border border-[#5a48ff36] cursor-pointer hover:scale-[1.05] transition-all duration-300 ease-in 
                  shadow-[_0px_1px_1px_0px_rgba(0,0,0,0.05),0_4px_6px_rgba(34,42,53,0.04),0_24px_68px_rgba(47,48,55,0.04),0_2px_3px_rgba(0,0,0,0.04)]
                 "
         >
