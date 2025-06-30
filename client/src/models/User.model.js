@@ -16,33 +16,7 @@ const userSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
+    provider: String,
 });
 
-export default mongoose.models.user || mongoose.model("user", userSchema);
-
-const designSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        require: true
-    },
-    width: {
-        type: Number,
-        require: true
-    },
-    Height: {
-        type: Number,
-        require: true
-    },
-    createAt: {
-        type: Date,
-        default: Date.now,
-    },
-    imgaePreview: String,
-    userId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "user",
-
-    },
-});
-export const Design =
-    mongoose.models.Design || mongoose.model("Design", designSchema);
+export default mongoose.models?.user || mongoose.model("user", userSchema);
