@@ -3,7 +3,7 @@ import LoginCard from "../components/loginCom/login-card";
 function Login() {
   return (
     <div
-      className="h-screen w-full bg-[#eff0f7] flex justify-center items-center relative"
+      className="h-screen w-full bg-[#e9ecff] flex justify-center items-center relative"
       style={{
         backgroundImage: `radial-gradient(circle at 0.5px 0.5px, rgba(6,182,212,0.2) 1px, transparent 0)`,
         backgroundSize: "8px 8px",

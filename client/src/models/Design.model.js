@@ -2,21 +2,22 @@
 const designSchema = new mongoose.Schema({
     title: {
         type: String,
-        require: true
+        required: true
     },
     width: {
         type: Number,
-        require: true
+        required: true
     },
-    Height: {
+    height: {
         type: Number,
-        require: true
+        required: true
     },
+    data: mongoose.Schema.Types.Mixed,
+    imagePreview: String,
     createAt: {
         type: Date,
         default: Date.now,
-    },
-    imgaePreview: String,
+    },   
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "user",

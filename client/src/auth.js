@@ -17,20 +17,20 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       return session;
     },
   },
-  events:{
-    async  signIn({user, account, profile}) {
+  events: {
+    async signIn({ user, account }) {
       await connectToDb();
       const existUser = await UserModel.findOne({
-        email : user.email
+        email: user.email,
       });
-      if(!existUser){
+      if (!existUser) {
         await UserModel.create({
           name: user.name,
           email: user.email,
           image: user.image,
           provider: account?.provider,
-        })
+        });
       }
-    }
-  }
+    },
+  },
 });
