@@ -5,6 +5,7 @@ import UserModel from "./models/User.model";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [Google],
+  secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async jwt({ token, account }) {
       if (account?.id_token) {
