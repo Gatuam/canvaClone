@@ -15,7 +15,7 @@ function TopHeader() {
     signOut();
   };
   return (
-    <div className="header h-20 border-b border-[#11111120] bg-[#f3f3f3e8] p-7 z-10 flex  items-center justify-between relative ">
+    <div className="header h-[8vh] border-b border-[#11111120] bg-[#f3f3f3e8] p-7 z-10 flex  items-center justify-between relative ">
       <div
         className=" w-20 h-8 bg-no-repeat"
         style={{

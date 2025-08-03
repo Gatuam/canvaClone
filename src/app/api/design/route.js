@@ -1,3 +1,5 @@
+export const runtime = 'nodejs'
+
 import { NextResponse } from "next/server";
 import { Design } from "@/models/Design.model";
 import { User } from "@/models/User.model";

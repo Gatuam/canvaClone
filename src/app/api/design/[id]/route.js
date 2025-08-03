@@ -1,3 +1,5 @@
+export const runtime = 'nodejs'
+
 import { auth } from "@/auth";
 import { connectToDb } from "@/dbConfig/db.connect";
 import { Design } from "@/models/Design.model";

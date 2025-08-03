@@ -30,7 +30,7 @@ function DesignType() {
       });
       
       console.log("Design created:", res.data.design);
-      router.push('/editor/' + session?.idToken);
+      router.push('/editor/' + session?.userId);
       
     } catch (error) {
       console.error("Error creating design:", error);
