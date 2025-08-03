@@ -2,19 +2,10 @@ import { NextResponse } from "next/server";
 import { Design } from "@/models/Design.model";
 import User from "@/models/User.model";
 import { connectToDb } from "@/dbConfig/db.connect";
-import { auth } from "@/auth";
 
 export async function POST(req) {
   try {
     await connectToDb();
-    const session = await auth();
-    console.log("Session:", session);
-
-    if (!session?.user?.email) {
-      console.log("Unauthorized - no session email");
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
     const body = await req.json();
     console.log("Request body:", body);
 
