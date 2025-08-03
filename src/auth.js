@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
 import { connectToDb } from "./dbConfig/db.connect";
-import UserModel from "./models/User.model";
+import {User} from "@/models/User.model";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [Google],
@@ -21,11 +21,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   events: {
     async signIn({ user, account }) {
       await connectToDb();
-      const existUser = await UserModel.findOne({
+      const existUser = await User.findOne({
         email: user.email,
       });
       if (!existUser) {
-        await UserModel.create({
+        await User.create({
           name: user.name,
           email: user.email,
           image: user.image,

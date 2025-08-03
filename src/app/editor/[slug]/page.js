@@ -1,8 +1,11 @@
 'use client'
+
+import TopHeader from "@/app/components/homeCom/Header";
+
 function Editor() {
     return ( 
         <div>
-            hi
+            <TopHeader/>
         </div>
      );
 }
