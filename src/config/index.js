@@ -15,7 +15,7 @@ export const designTypes = [
   {
     icon: <Youtube className="h-6 w-6 text-white" />,
     label: "YouTube Thumbnail",
-    title: "YouTube Thumbnail",
+    title: "YouTube-Thumbnail",
     bgColor: "bg-red-500",
     width: 900,
     height: 500,
@@ -23,7 +23,7 @@ export const designTypes = [
   {
     icon: <Image className="h-6 w-6 text-white" />,
     label: "Logo Design",
-    title: "Logo Design",
+    title: "Logo-Design",
     bgColor: "bg-purple-500",
     width: 400,
     height: 465,
@@ -31,7 +31,7 @@ export const designTypes = [
   {
     icon: <Palette className="h-6 w-6 text-white" />,
     label: "Color Palette",
-    title: "Color Palette",
+    title: "Color-Palette",
     bgColor: "bg-blue-500",
     width: 500,
     height: 500,
@@ -47,7 +47,7 @@ export const designTypes = [
   {
     icon: <Heart className="h-6 w-6 text-white" />,
     label: "Social Media",
-    title: "Social Media Post",
+    title: "Social-Media-Post",
     bgColor: "bg-red-400",
     width: 825,
     height: 465,
@@ -55,7 +55,7 @@ export const designTypes = [
   {
     icon: <Sticker className="h-6 w-6 text-white" />,
     label: "Stickers",
-    title: "Sticker Design",
+    title: "Sticker-Design",
     bgColor: "bg-pink-500",
     width: 250,
     height: 250,
@@ -63,7 +63,7 @@ export const designTypes = [
   {
     icon: <Printer className="h-6 w-6 text-white" />,
     label: "Printables",
-    title: "Printable Templates",
+    title: "Printable-Templates",
     bgColor: "bg-purple-500",
     width: 600,
     height: 600,
@@ -71,7 +71,7 @@ export const designTypes = [
   {
     icon: <Sparkles className="h-6 w-6 text-white" />,
     label: "AI Background",
-    title: "AI Generated Background",
+    title: "AI-Generated-Background",
     bgColor: "bg-blue-600",
     width: 825,
     height: 465,
@@ -79,7 +79,7 @@ export const designTypes = [
   {
     icon: <Wand2 className="h-6 w-6 text-white" />,
     label: "AI Image Gen",
-    title: "AI Image Generator",
+    title: "AI-Image-Generator",
     bgColor: "bg-violet-600",
     width: 825,
     height: 465,
@@ -87,11 +87,12 @@ export const designTypes = [
   {
     icon: <Upload className="h-6 w-6 text-gray-700" />,
     label: "Upload",
-    title: "Upload Your Design",
+    title: "Upload-Your-Design",
     bgColor: "bg-gray-100",
+    width: 500, // add default width
+    height: 500, // add default height
   },
 ];
-
 
 export const colorPresets = [
   "#FFFFFF",

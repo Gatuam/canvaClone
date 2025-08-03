@@ -1,29 +1,27 @@
-'use client'
+"use client";
 import axios from "axios";
 import { designTypes } from "../../config/index";
+import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 
- function DesignType() {
-  const { data: session } = useSession();
-  console.log(session)
-
+function DesignType() {
+  const session = useSession();
+  console.log(  'session', session.data)
+  const router = useRouter();
   const createDesign = async (design) => {
     try {
       const res = await axios.post("/api/design", {
-        title: design.title,
+        title: design.label || "Untitled",
         width: design.width,
         height: design.height,
-        data: "",
+        data: {},
         imagePreview: "",
-      },
-       {
-    withCredentials: true,
-  }
-    );
+      });
       console.log("Design created:", res.data.design);
     } catch (error) {
       console.error("Error creating design:", error);
     }
+    
   };
 
   return (
@@ -33,7 +31,10 @@ import { useSession } from "next-auth/react";
           <div
             key={i}
             className="flex flex-col items-center  mt-5 cursor-pointer "
-            onClick={()=> createDesign(design)}
+            onClick={() =>{ 
+              createDesign(design)
+              router.push('/editor/'+ session?.data?.idToken)
+            }}
           >
             <div
               className={`${design.bgColor} w-14 h-14 rounded-full flex items-center justify-center mb-2 hover:scale-1.1 hover:shadow-lg `}
