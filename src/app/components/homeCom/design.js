@@ -29,7 +29,6 @@ function DesignType() {
         imagePreview: "",
       });
       
-      console.log("Design created:", res.data.design);
       router.push('/editor/' + session?.userId);
       
     } catch (error) {

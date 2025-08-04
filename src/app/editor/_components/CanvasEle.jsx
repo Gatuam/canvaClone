@@ -9,10 +9,16 @@ const CanvasEle = () => {
   useEffect(() => {
     if (canvaRef.current) {
       const initCanva = new Canvas(canvaRef.current, {
-        width: 500,
-        height: 500,
+        width: 1200/2,
+        height: 720/2,
         backgroundColor: '#000',
       });
+      const scalefactor = window.devicePixelRatio || 1;
+      initCanva.set({
+        width: 1200* scalefactor,
+        height: 720* scalefactor,
+        zoom : 1* scalefactor
+      })
       initCanva.renderAll();
       setCanvas(initCanva);
       return () => {
