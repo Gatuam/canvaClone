@@ -28,6 +28,7 @@
     "next-auth": "^5.0.0-beta.29",
     "nodemailer": "^6.10.1",
     "react": "^19.0.0",
+    "react-color": "^2.19.3",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^3.3.1",
     "zustand": "^5.0.7"

@@ -18,15 +18,14 @@ const GetDesign = ({ id }) => {
         setDesign(res.data.data);
         console.log("Design fetched:", res.data.data);
       } catch (error) {
-        console.error("Error fetching design:", error); 
+        console.error("Error fetching design:", error);
       }
     };
-    
-    if (id && session) { 
+
+    if (id && session) {
       fetchDesign();
     }
-  }, [id, session]); 
-
+  }, [id, session]);
 
   useEffect(() => {
     if (design) {

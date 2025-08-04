@@ -1,4 +1,4 @@
-export const runtime = 'nodejs'
+export const runtime = "nodejs";
 
 import { NextResponse } from "next/server";
 import { Design } from "@/models/Design.model";
@@ -10,7 +10,7 @@ export async function POST(req) {
   try {
     await connectToDb();
     const session = await auth();
-    
+
     if (!session || !session.user) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }

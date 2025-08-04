@@ -4,7 +4,7 @@ import { Design } from "@/models/Design.model";
 import { User } from "@/models/User.model";
 import { NextResponse } from "next/server";
 
-export const runtime = 'nodejs'
+export const runtime = "nodejs";
 
 export async function GET(req, { params }) {
   try {
