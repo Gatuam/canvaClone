@@ -1,2 +1,17 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+
+
+  html {
+    font-family: var(--font-poppins);
+  }
+  
+  body {
+    font-family: var(--font-poppins), sans-serif;
+  }
+  .chrome-picker {
+    width: auto !important;
+    box-shadow: none !important;
+    border-radius: 6px !important;
+    font-family: var(--font-poppins)  !important;
+  }

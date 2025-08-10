@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
 
-export async function GET(req, { params }) {
+export async function GET(_req, { params }) {
   try {
     await connectToDb();
     const session = await auth();

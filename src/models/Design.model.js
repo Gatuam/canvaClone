@@ -21,8 +21,9 @@ const designSchema = new mongoose.Schema({
   },
   userId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "user",
+    ref: "User",
+    required: true,
   },
 });
-export const Design =
-  mongoose.models?.design || mongoose.model("design", designSchema);
+
+export const Design = mongoose.models?.Design || mongoose.model("Design", designSchema);

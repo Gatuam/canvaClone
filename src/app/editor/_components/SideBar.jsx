@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  Box,
   HeartPlus,
   ImageIcon,
   LayoutTemplate,
@@ -11,10 +12,11 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import SiderBarChild from "./SiderBarChild";
+import BackgroundSetting from "./BackgroundSetting";
 
 function SideBar() {
-  const [select, SetSelect] = useState();
-  const [open, setOpen] = useState(false);
+  const [select, SetSelect] = useState(null);
+  const [open, setOpen] = useState(true);
   return (
     <div className="w-full flex h-full">
       <div className=" bg-neutral-50 border border-[#11111123] m-0 p-4">
@@ -29,37 +31,48 @@ function SideBar() {
             {
               icon: <LayoutTemplate className="h-6 w-6" />,
               label: "Templat",
+              component : <BackgroundSetting/>
             },
             {
               icon: <ImageIcon className="h-6 w-6" />,
               label: "Image",
+              component : <BackgroundSetting/>
             },
             {
               icon: <Square className="h-6 w-6" />,
               label: "Shape",
+              component : <BackgroundSetting/>
             },
             {
               icon: <Text className="h-6 w-6" />,
               label: "Font",
+              component : <BackgroundSetting/>
             },
             {
               icon: <Sparkles className="h-6 w-6" />,
               label: "Ai",
+              component : <BackgroundSetting/>
+            },
+             {
+              icon: <Box className="h-6 w-6" />,
+              label: "Background",
+              component : <BackgroundSetting/>
             },
             {
               icon: <Settings className="h-6 w-6" />,
               label: "Setting",
+              component : <BackgroundSetting/>
             },
           ].map((item, i) => {
             return (
               <div
                 key={i}
                 onClick={() => {
-                  SetSelect(item.label);
-                  setOpen((pre) => !pre);
+                SetSelect(item);
+
                 }}
                 className={`flex justify-center mb-4 cursor-pointer hover:bg-purple-200 rounded-xl transition-all delay-100 px-2 py-1 items-center ${
-                  select === item.label && "bg-purple-200"
+                  select?.label === item.label && "bg-purple-200"
                 }
                 `}
               >

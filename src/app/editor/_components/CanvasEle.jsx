@@ -1,17 +1,19 @@
 "use client";
 import { Canvas } from "fabric";
 import React, { useEffect, useRef, useState } from "react";
+import { useCanvasHook } from "../[slug]/page";
 
-const CanvasEle = () => {
+const CanvasEle = ({designinfo}) => {
   const canvaRef = useRef(null);
   const [canvas, setCanvas] = useState(null);
+  const {canvasEditor, setCanvasEditor}= useCanvasHook();
 
   useEffect(() => {
     if (canvaRef.current) {
       const initCanva = new Canvas(canvaRef.current, {
-        width: 1200 / 2,
-        height: 720 / 2,
-        backgroundColor: "#000",
+        width: 1200/ 2,
+        height: 1200 / 2,
+        backgroundColor: canvasEditor,
       });
       const scalefactor = window.devicePixelRatio || 1;
       initCanva.set({
@@ -21,6 +23,7 @@ const CanvasEle = () => {
       });
       initCanva.renderAll();
       setCanvas(initCanva);
+      setCanvasEditor(initCanva)
       return () => {
         initCanva.dispose();
       };
