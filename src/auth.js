@@ -1,10 +1,9 @@
-export const runtime = 'nodejs'
 
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
 import { connectToDb } from "./dbConfig/db.connect";
 import { User } from "@/models/User.model";
-
+export const runtime = 'nodejs'
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [Google],
   secret: process.env.NEXTAUTH_SECRET,

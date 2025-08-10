@@ -13,7 +13,7 @@ const CanvasEle = ({designinfo}) => {
       const initCanva = new Canvas(canvaRef.current, {
         width: 1200/ 2,
         height: 1200 / 2,
-        backgroundColor: canvasEditor,
+        backgroundColor: canvasEditor || '#111',
       });
       const scalefactor = window.devicePixelRatio || 1;
       initCanva.set({
