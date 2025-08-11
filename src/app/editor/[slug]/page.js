@@ -1,6 +1,6 @@
 "use client";
 import TopHeader from "@/app/components/homeCom/Header";
-import GetDesign from "../_components/GetDesign";
+import GetDesign from "../_components/child/GetDesign";
 import SideBar from "../_components/SideBar";
 import Canvas from "../_components/CanvasEle";
 import React, { useContext, useState } from "react";

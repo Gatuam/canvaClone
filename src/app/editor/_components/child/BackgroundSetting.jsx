@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import Color from "./shared/Color";
-import { useCanvasHook } from "../[slug]/page";
+import Color from "../shared/Color";
+import { useCanvasHook } from "../../[slug]/page";
 
 const BackgroundSetting = () => {
   const { canvasEditor } = useCanvasHook();

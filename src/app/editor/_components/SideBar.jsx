@@ -11,8 +11,9 @@ import {
   Text,
 } from "lucide-react";
 import { useState } from "react";
-import SiderBarChild from "./SiderBarChild";
-import BackgroundSetting from "./BackgroundSetting";
+import SiderBarChild from "./child/SiderBarChild";
+import BackgroundSetting from "./child/BackgroundSetting";
+import ImageSetting from "./child/ImageSetting";
 
 function SideBar() {
   const [select, SetSelect] = useState(null);
@@ -36,7 +37,7 @@ function SideBar() {
             {
               icon: <ImageIcon className="h-6 w-6" />,
               label: "Image",
-              component : <BackgroundSetting/>
+              component : <ImageSetting/>
             },
             {
               icon: <Square className="h-6 w-6" />,
