@@ -51,9 +51,12 @@ const CanvasEle = ({ designinfo }) => {
   }, [canvasEditor]);
 
   return (
-    <div className="w-full h-full flex justify-center items-center">
-      <canvas ref={canvaRef} />
-    </div>
+    <>
+      
+      <div className="w-full h-full flex justify-center items-center">
+        <canvas className=" shadow-xl" ref={canvaRef} />
+      </div>
+    </>
   );
 };
 

@@ -15,3 +15,8 @@
     border-radius: 6px !important;
     font-family: var(--font-poppins)  !important;
   }
+  .sketch-picker {
+    box-shadow: none !important;
+    border-radius: 6px !important;
+    font-family: var(--font-poppins)  !important;
+  }

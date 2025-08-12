@@ -14,13 +14,15 @@ import { useState } from "react";
 import SiderBarChild from "./child/SiderBarChild";
 import BackgroundSetting from "./child/BackgroundSetting";
 import ImageSetting from "./child/ImageSetting";
+import Element from "./child/Element";
+import TopNav from "./child/TopNav";
 
 function SideBar() {
   const [select, SetSelect] = useState(null);
   const [open, setOpen] = useState(true);
   return (
-    <div className="w-full flex h-full">
-      <div className=" bg-neutral-50 border border-[#11111123] m-0 p-4">
+    <div className="w-full flex">
+      <div className=" bg-neutral-100 border border-[#11111123] m-0 p-4">
         <div className="flex justify-center items-center flex-col">
           <button className=" w-10 h-10 rounded-full bg-[#040310] flex justify-center items-center cursor-pointer text-white hover:bg-[#111111e1] ">
             <HeartPlus />
@@ -29,42 +31,50 @@ function SideBar() {
         </div>
         <nav className="mt-8 flex flex-col spave-y-7 w-full">
           {[
-            {
-              icon: <LayoutTemplate className="h-6 w-6" />,
-              label: "Templat",
-              component : <BackgroundSetting/>
-            },
-            {
-              icon: <ImageIcon className="h-6 w-6" />,
-              label: "Image",
-              component : <ImageSetting/>
-            },
-            {
-              icon: <Square className="h-6 w-6" />,
-              label: "Shape",
-              component : <BackgroundSetting/>
-            },
-            {
-              icon: <Text className="h-6 w-6" />,
-              label: "Font",
-              component : <BackgroundSetting/>
-            },
-            {
-              icon: <Sparkles className="h-6 w-6" />,
-              label: "Ai",
-              component : <BackgroundSetting/>
-            },
-             {
-              icon: <Box className="h-6 w-6" />,
-              label: "Background",
-              component : <BackgroundSetting/>
-            },
-            {
-              icon: <Settings className="h-6 w-6" />,
-              label: "Setting",
-              component : <BackgroundSetting/>
-            },
-          ].map((item, i) => {
+  {
+    icon: <LayoutTemplate className="h-6 w-6" />,
+    label: "Templat",
+    component: <BackgroundSetting />,
+    description: "Select layout styles"
+  },
+  {
+    icon: <ImageIcon className="h-6 w-6" />,
+    label: "Image",
+    component: <ImageSetting />,
+    description: "Manage images"
+  },
+  {
+    icon: <Square className="h-6 w-6" />,
+    label: "Shape",
+    component: <Element />,
+    description: "Add shapes"
+  },
+  {
+    icon: <Text className="h-6 w-6" />,
+    label: "Font",
+    component: <BackgroundSetting />,
+    description: "Choose fonts"
+  },
+  {
+    icon: <Sparkles className="h-6 w-6" />,
+    label: "Ai",
+    component: <BackgroundSetting />,
+    description: "AI tools"
+  },
+  {
+    icon: <Box className="h-6 w-6" />,
+    label: "Background",
+    component: <BackgroundSetting />,
+    description: "Set background"
+  },
+  {
+    icon: <Settings className="h-6 w-6" />,
+    label: "Setting",
+    component: <BackgroundSetting />,
+    description: "Adjust settings"
+  },
+]
+.map((item, i) => {
             return (
               <div
                 key={i}
@@ -72,8 +82,8 @@ function SideBar() {
                 SetSelect(item);
 
                 }}
-                className={`flex justify-center mb-4 cursor-pointer hover:bg-purple-200 rounded-xl transition-all delay-100 px-2 py-1 items-center ${
-                  select?.label === item.label && "bg-purple-200"
+                className={`flex justify-center mb-4 border border-[#1110] cursor-pointer hover:bg-purple-50 hover:shadow-lg rounded-xl transition-all delay-100 px-2 py-1 items-center  ${
+                  select?.label === item.label && "bg-purple-50 shadow-lg border border-[#a200ff15]  rounded-md"
                 }
                 `}
               >
@@ -86,7 +96,8 @@ function SideBar() {
           })}
         </nav>
       </div>
-      {open === true && <SiderBarChild select={select} />}
+      <SiderBarChild select={select} />   
+       <TopNav />
     </div>
   );
 }

@@ -35,12 +35,12 @@ function Images() {
     }
   };
   return (
-    <div>
+    <div className="w-full">
       <label htmlFor="file" className="cursor-pointer">
         <Button
           asChild
           variant="outline"
-          className="bg-gradient-to-b from-[#111] to-[#222] text-white"
+          className="bg-gradient-to-b from-[#5e45ff] to-[#ba30ff] text-white w-full mt-2"
         >
           <span>
             {loading ? <Loader2 className=" animate-spin" /> : "Upload"}

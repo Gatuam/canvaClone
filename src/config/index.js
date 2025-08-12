@@ -1,3 +1,9 @@
+import BorderRadius from "@/app/editor/_components/shared/BorderRadius";
+import BorderWidth from "@/app/editor/_components/shared/BorderWidth";
+import FillColor from "@/app/editor/_components/shared/FillColor";
+import Opacity from "@/app/editor/_components/shared/Opacity";
+import Stroke from "@/app/editor/_components/shared/Stroke";
+
 const {
   Youtube,
   Image,
@@ -9,6 +15,19 @@ const {
   Sparkles,
   Wand2,
   Upload,
+  Circle,
+  Square,
+  Triangle,
+  Slash,
+  Minus,
+  Blend,
+  CornerDownRight,
+  Layers,
+  AlignCenter,
+  Copy,
+  Move,
+  CornerUpRightIcon,
+  Trash,
 } = require("lucide-react");
 
 export const designTypes = [
@@ -205,4 +224,51 @@ export const fontFamilies = [
   "Verdana",
   "Impact",
   "Comic Sans MS",
+];
+
+export const ShapeList = [
+  {
+    name: 'Circle',
+    icon: <Circle className="h-6 w-6" />
+  },
+  {
+    name: 'Square',
+    icon: <Square className="h-6 w-6" />
+  },
+  {
+    name: 'Triangle',
+    icon: <Triangle className="h-6 w-6" />
+  },
+  {
+    name: 'Line',
+    icon: <Slash className="h-6 w-6" />
+  },
+];
+
+export const shapesSettingsList = [
+  {
+    name: 'Fill',
+    icon: <Palette />,
+    component : <FillColor/>
+  },
+  {
+    name: 'Stroke Color',
+    icon: <Square/>,
+    component : <Stroke/>
+  },
+  {
+    name: 'Stroke Width',
+    icon: <Minus/>,
+    component : <BorderWidth/>
+  },
+  {
+    name: 'Opacity',
+    icon: <Blend/>,
+    component : <Opacity/>
+  },
+  {
+    name: 'Border Radius',
+    icon: <CornerUpRightIcon/>,
+    component : <BorderRadius/>
+  }
 ];
