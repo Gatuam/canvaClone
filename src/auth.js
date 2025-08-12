@@ -1,4 +1,4 @@
-export const runtime = "nodejs";
+
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
 import { connectToDb } from "./dbConfig/db.connect";
