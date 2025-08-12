@@ -12,7 +12,7 @@ const nextConfig = {
   images: {
     domains: ['images.unsplash.com'],
   },
-  webpack: (config) => {
+  webpack(config) {
     config.resolve.alias = {
       ...config.resolve.alias,
       mongoose: path.resolve(__dirname, 'node_modules', 'mongoose'),
