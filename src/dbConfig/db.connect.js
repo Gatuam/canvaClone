@@ -1,3 +1,5 @@
+import mongoose from "mongoose";
+
 const connection = { isConnected: false };
 
 export async function connectToDb() {
@@ -6,12 +8,11 @@ export async function connectToDb() {
     return;
   }
   try {
-    const mongoose = (await import("mongoose")).default;
-    const connectDb = await mongoose.connect(process.env.MONGO_URI);
-    connection.isConnected = connectDb.connections[0].readyState;
+    await mongoose.connect(process.env.MONGO_URI);
+    connection.isConnected = true;
     console.log("Db is connected");
   } catch (error) {
-    console.log(error);
-    process.exit(1);
+    console.error("DB connection error:", error);
+    throw error;  // Don't exit process here in API route
   }
 }
