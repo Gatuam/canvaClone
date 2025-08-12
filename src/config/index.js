@@ -1,5 +1,6 @@
 import BorderRadius from "@/app/editor/_components/shared/BorderRadius";
 import BorderWidth from "@/app/editor/_components/shared/BorderWidth";
+import BoxShadow from "@/app/editor/_components/shared/BoxShadow";
 import FillColor from "@/app/editor/_components/shared/FillColor";
 import Opacity from "@/app/editor/_components/shared/Opacity";
 import Stroke from "@/app/editor/_components/shared/Stroke";
@@ -28,6 +29,7 @@ const {
   Move,
   CornerUpRightIcon,
   Trash,
+  BoxIcon,
 } = require("lucide-react");
 
 export const designTypes = [
@@ -270,5 +272,48 @@ export const shapesSettingsList = [
     name: 'Border Radius',
     icon: <CornerUpRightIcon/>,
     component : <BorderRadius/>
+  },
+  {
+    name: 'Shadow',
+    icon: <BoxIcon/>,
+    component : <BoxShadow/>
   }
 ];
+export const AITransformationSettings = [
+  {
+    name: 'Background Remove',
+    command: 'e-removedotbg',
+    image: '/remove-bg.jpg'
+  },
+  {
+    name: 'Change Background',
+    command: 'e-changebg',
+    image: '/change-bg.jpg',
+    input: true
+  },
+  {
+    name: 'Generative Fill',
+    command: 'bg-genfill',
+    image: '/generative-fill.jpg'
+  },
+  {
+    name: 'Image Upscale',
+    command: 'e-upscale',
+    image: '/upscale.jpg'
+  },
+  {
+    name: 'Face Retouch',
+    command: 'e-retouch',
+    image: '/face-retouch.jpg'
+  },
+  {
+    name: 'Drop Shadow',
+    command: 'e-dropshadow',
+    image: '/bw.jpg'
+  },
+  {
+    name: 'Smart crop',
+    command: 'fo-auto',
+    image: '/smartcrop.jpg'
+  }
+]

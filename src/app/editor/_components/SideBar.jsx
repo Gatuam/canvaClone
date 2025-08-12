@@ -16,6 +16,7 @@ import BackgroundSetting from "./child/BackgroundSetting";
 import ImageSetting from "./child/ImageSetting";
 import Element from "./child/Element";
 import TopNav from "./child/TopNav";
+import AiTransform from "./child/AiTransform";
 
 function SideBar() {
   const [select, SetSelect] = useState(null);
@@ -31,59 +32,59 @@ function SideBar() {
         </div>
         <nav className="mt-8 flex flex-col spave-y-7 w-full">
           {[
-  {
-    icon: <LayoutTemplate className="h-6 w-6" />,
-    label: "Templat",
-    component: <BackgroundSetting />,
-    description: "Select layout styles"
-  },
-  {
-    icon: <ImageIcon className="h-6 w-6" />,
-    label: "Image",
-    component: <ImageSetting />,
-    description: "Manage images"
-  },
-  {
-    icon: <Square className="h-6 w-6" />,
-    label: "Shape",
-    component: <Element />,
-    description: "Add shapes"
-  },
-  {
-    icon: <Text className="h-6 w-6" />,
-    label: "Font",
-    component: <BackgroundSetting />,
-    description: "Choose fonts"
-  },
-  {
-    icon: <Sparkles className="h-6 w-6" />,
-    label: "Ai",
-    component: <BackgroundSetting />,
-    description: "AI tools"
-  },
-  {
-    icon: <Box className="h-6 w-6" />,
-    label: "Background",
-    component: <BackgroundSetting />,
-    description: "Set background"
-  },
-  {
-    icon: <Settings className="h-6 w-6" />,
-    label: "Setting",
-    component: <BackgroundSetting />,
-    description: "Adjust settings"
-  },
-]
-.map((item, i) => {
+            {
+              icon: <ImageIcon className="h-6 w-6" />,
+              label: "Image",
+              component: <ImageSetting />,
+              description: "Upload, edit, and perfect your images.",
+            },
+            {
+              icon: <Square className="h-6 w-6" />,
+              label: "Shape",
+              component: <Element />,
+              description: "Add elegant shapes to your design.",
+            },
+            {
+              icon: <Box className="h-6 w-6" />,
+              label: "Background",
+              component: <BackgroundSetting />,
+              description: "Set stunning backdrops in seconds.",
+            },
+            {
+              icon: <Sparkles className="h-6 w-6" />,
+              label: "AI",
+              component: <AiTransform />,
+              description: "Let AI bring magic to your creations.",
+            },
+            {
+              icon: <Text className="h-6 w-6" />,
+              label: "Font",
+              component: <BackgroundSetting />,
+              description: "Choose stylish fonts that speak volumes.",
+            },
+            
+            {
+              icon: <LayoutTemplate className="h-6 w-6" />,
+              label: "Template",
+              component: <BackgroundSetting />,
+              description: "Pick templates to jumpstart your design.",
+            },
+            {
+              icon: <Settings className="h-6 w-6" />,
+              label: "Setting",
+              component: <BackgroundSetting />,
+              description: "Fine-tune everything to perfection.",
+            },
+          ].map((item, i) => {
             return (
               <div
                 key={i}
                 onClick={() => {
-                SetSelect(item);
-
+                  SetSelect(item);
                 }}
                 className={`flex justify-center mb-4 border border-[#1110] cursor-pointer hover:bg-purple-50 hover:shadow-lg rounded-xl transition-all delay-100 px-2 py-1 items-center  ${
-                  select?.label === item.label && "bg-purple-50 shadow-lg border border-[#a200ff15]  rounded-md"
+                  select?.label === item.label &&
+                  "bg-purple-50 shadow-lg border border-[#a200ff15]  rounded-md"
                 }
                 `}
               >
@@ -96,8 +97,8 @@ function SideBar() {
           })}
         </nav>
       </div>
-      <SiderBarChild select={select} />   
-       <TopNav />
+      <SiderBarChild select={select} />
+      <TopNav />
     </div>
   );
 }

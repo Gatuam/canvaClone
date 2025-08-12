@@ -28,10 +28,10 @@ const ShapeSetting = () => {
   };
 
   return (
-    <div className="flex flex-col gap-6 items-center justify-center">
+    <div className="flex flex-col gap-5 items-center justify-center">
       {shapesSettingsList.map((setting, i) => (
         <div
-          className={`w-full h-full cursor-pointer p-2 border border-[#1110] hover:text-purple-500 hover:scale-107 transition-all ease-in-out
+          className={`w-full h-full cursor-pointer p-2 border border-[#1110] hover:text-purple-500 hover:scale-107 transition-all ease-in-out 
             ${selectedSetting === i && 'text-purple-600 bg-purple-50 shadow-lg border border-[#a200ff15]  rounded-md'}
           `}
           key={i}
@@ -66,7 +66,7 @@ const ShapeSetting = () => {
               </TooltipContent>
             </Tooltip>
 
-            <PopoverContent className="absolute left-9 -top-7 bg-[#ffffff] border-[#11111132] flex justify-center items-center w-fit">
+            <PopoverContent className="absolute left-9 -top-10 bg-[#ffffff] border-[#11111132] flex justify-center items-center w-fit">
               {setting?.component}
             </PopoverContent>
           </Popover>
@@ -77,7 +77,7 @@ const ShapeSetting = () => {
         <TooltipTrigger asChild>
           <Trash
             onClick={() => onDelete()}
-            className="w-5 h-5 cursor-pointer hover:text-purple-500 hover:scale-107 transition-all ease-in-out"
+            className="w-5 h-5 cursor-pointer hover:text-purple-500 hover:scale-107 transition-all ease-in-out mt-4 text-red-600"
           />
         </TooltipTrigger>
 

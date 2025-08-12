@@ -7,7 +7,9 @@ const TopNav = () => {
   const { canvasEditor } = useCanvasHook();
   if (canvasEditor) {
     canvasEditor.on("selection:created", (e) => {
-      setShowSetting(true);
+      if (e.selected[0]?.cornerStyle === "rect") {
+        setShowSetting(true);
+      }
     });
     canvasEditor.on("selection:cleared", (e) => {
       setShowSetting(false);
