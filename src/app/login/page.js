@@ -1,4 +1,4 @@
-import LoginCard from "../components/loginCom/login-card";
+import LoginCard from "../components/loginCom/LoginCard";
 
 function Login() {
   return (

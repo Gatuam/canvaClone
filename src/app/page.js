@@ -1,11 +1,11 @@
 "use client";
 
 import Banner from "./components/homeCom/Banner";
-import DesignType from "./components/homeCom/design";
+import DesignType from "./components/homeCom/Design";
 import TopHeader from "./components/homeCom/Header";
-import SideBar from "./components/homeCom/Sidebar";
-import AiFeatures from "./components/homeCom/ai-feature";
-import RecentDesigns from "./components/homeCom/recentDesign";
+import SideBar from "./components/homeCom/SideBar";
+import AiFeatures from "./components/homeCom/AiFeature";
+import RecentDesigns from "./components/homeCom/RecentDesign";
 
 export default function Home() {
   return (
