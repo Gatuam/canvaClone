@@ -1,11 +1,4 @@
-import BorderRadius from "@/app/editor/_components/shared/BorderRadius";
-import BorderWidth from "@/app/editor/_components/shared/BorderWidth";
-import BoxShadow from "@/app/editor/_components/shared/BoxShadow";
-import FillColor from "@/app/editor/_components/shared/FillColor";
-import Opacity from "@/app/editor/_components/shared/Opacity";
-import Stroke from "@/app/editor/_components/shared/Stroke";
-
-const {
+import {
   Youtube,
   Image,
   Palette,
@@ -22,15 +15,16 @@ const {
   Slash,
   Minus,
   Blend,
-  CornerDownRight,
-  Layers,
-  AlignCenter,
-  Copy,
-  Move,
   CornerUpRightIcon,
-  Trash,
   BoxIcon,
-} = require("lucide-react");
+} from "lucide-react";
+
+import BorderRadius from "@/app/editor/_components/shared/BorderRadius";
+import BorderWidth from "@/app/editor/_components/shared/BorderWidth";
+import BoxShadow from "@/app/editor/_components/shared/BoxShadow";
+import FillColor from "@/app/editor/_components/shared/FillColor";
+import Opacity from "@/app/editor/_components/shared/Opacity";
+import Stroke from "@/app/editor/_components/shared/Stroke";
 
 export const designTypes = [
   {
@@ -110,8 +104,8 @@ export const designTypes = [
     label: "Upload",
     title: "Upload-Your-Design",
     bgColor: "bg-gray-100",
-    width: 500, // add default width
-    height: 500, // add default height
+    width: 500,
+    height: 500,
   },
 ];
 
@@ -203,13 +197,11 @@ export const drawingPanelColorPresets = [
   "#FF00FF",
   "#00FFFF",
   "#FFFF00",
-  // Muted colors
   "#6B705C",
   "#A5A58D",
   "#B7B7A4",
   "#CB997E",
   "#DDBEA9",
-  // Dark colors
   "#1A1A2E",
   "#16213E",
   "#0F3460",
@@ -229,91 +221,27 @@ export const fontFamilies = [
 ];
 
 export const ShapeList = [
-  {
-    name: 'Circle',
-    icon: <Circle className="h-6 w-6" />
-  },
-  {
-    name: 'Square',
-    icon: <Square className="h-6 w-6" />
-  },
-  {
-    name: 'Triangle',
-    icon: <Triangle className="h-6 w-6" />
-  },
-  {
-    name: 'Line',
-    icon: <Slash className="h-6 w-6" />
-  },
+  { name: "Circle", icon: <Circle className="h-6 w-6" /> },
+  { name: "Square", icon: <Square className="h-6 w-6" /> },
+  { name: "Triangle", icon: <Triangle className="h-6 w-6" /> },
+  { name: "Line", icon: <Slash className="h-6 w-6" /> },
 ];
 
 export const shapesSettingsList = [
-  {
-    name: 'Fill',
-    icon: <Palette />,
-    component : <FillColor/>
-  },
-  {
-    name: 'Stroke Color',
-    icon: <Square/>,
-    component : <Stroke/>
-  },
-  {
-    name: 'Stroke Width',
-    icon: <Minus/>,
-    component : <BorderWidth/>
-  },
-  {
-    name: 'Opacity',
-    icon: <Blend/>,
-    component : <Opacity/>
-  },
-  {
-    name: 'Border Radius',
-    icon: <CornerUpRightIcon/>,
-    component : <BorderRadius/>
-  },
-  {
-    name: 'Shadow',
-    icon: <BoxIcon/>,
-    component : <BoxShadow/>
-  }
+  { name: "Fill", icon: <Palette />, component: <FillColor /> },
+  { name: "Stroke Color", icon: <Square />, component: <Stroke /> },
+  { name: "Stroke Width", icon: <Minus />, component: <BorderWidth /> },
+  { name: "Opacity", icon: <Blend />, component: <Opacity /> },
+  { name: "Border Radius", icon: <CornerUpRightIcon />, component: <BorderRadius /> },
+  { name: "Shadow", icon: <BoxIcon />, component: <BoxShadow /> },
 ];
+
 export const AITransformationSettings = [
-  {
-    name: 'Background Remove',
-    command: 'e-removedotbg',
-    image: '/remove-bg.jpg'
-  },
-  {
-    name: 'Change Background',
-    command: 'e-removedotbg',
-    image: '/change-bg.jpg',
-    input: true
-  },
-  {
-    name: 'Generative Fill',
-    command: 'e-gen_fill',
-    image: '/generative-fill.jpg'
-  },
-  {
-    name: 'Image Upscale',
-    command: 'e-upscale',
-    image: '/upscale.jpg'
-  },
-  {
-    name: 'Face Retouch',
-    command: 'e-retouch',
-    image: '/face-retouch.jpg'
-  },
-  {
-    name: 'Drop Shadow',
-    command: 'e-dropshadow',
-    image: '/bw.jpg'
-  },
-  {
-    name: 'Smart crop',
-    command: 'fo-auto',
-    image: '/smartcrop.jpg'
-  }
-]
+  { name: "Background Remove", command: "e-removedotbg", image: "/remove-bg.jpg" },
+  { name: "Change Background", command: "e-removedotbg", image: "/change-bg.jpg", input: true },
+  { name: "Generative Fill", command: "e-gen_fill", image: "/generative-fill.jpg" },
+  { name: "Image Upscale", command: "e-upscale", image: "/upscale.jpg" },
+  { name: "Face Retouch", command: "e-retouch", image: "/face-retouch.jpg" },
+  { name: "Drop Shadow", command: "e-dropshadow", image: "/bw.jpg" },
+  { name: "Smart crop", command: "fo-auto", image: "/smartcrop.jpg" },
+];
