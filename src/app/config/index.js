@@ -1,4 +1,4 @@
-const {
+import {
   Youtube,
   Image,
   Palette,
@@ -9,7 +9,7 @@ const {
   Sparkles,
   Wand2,
   Upload,
-} = require("lucide-react");
+} from "lucide-react";
 
 export const designTypes = [
   {
