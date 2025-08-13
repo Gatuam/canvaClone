@@ -1,5 +1,5 @@
 import { auth } from "@/auth";
-import { connectToDb } from "@/dbConfig/db.connect";
+import connectToDb from "@/dbConfig/db.connect";
 import { Design } from "@/models/Design.model";
 import { User } from "@/models/User.model";
 import { NextResponse } from "next/server";

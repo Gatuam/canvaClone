@@ -22,7 +22,7 @@ function Images() {
       const file = e.target.files[0];
       const imageRef = await imagekit.upload({
         file: file,
-        fileName: designId + "jpg",
+        fileName: designId + ".jpg",
         isPublished: true,
       });
       const canvasImage = await FabricImage.fromURL(imageRef?.url);

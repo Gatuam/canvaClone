@@ -3,8 +3,8 @@ export const runtime = "nodejs";
 import { NextResponse } from "next/server";
 import { Design } from "@/models/Design.model";
 import { User } from "@/models/User.model";
-import { connectToDb } from "@/dbConfig/db.connect";
 import { auth } from "@/auth";
+import connectToDb from "@/dbConfig/db.connect";
 
 export async function POST(req) {
   try {

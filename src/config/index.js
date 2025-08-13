@@ -287,13 +287,13 @@ export const AITransformationSettings = [
   },
   {
     name: 'Change Background',
-    command: 'e-changebg',
+    command: 'e-removedotbg',
     image: '/change-bg.jpg',
     input: true
   },
   {
     name: 'Generative Fill',
-    command: 'bg-genfill',
+    command: 'e-gen_fill',
     image: '/generative-fill.jpg'
   },
   {
