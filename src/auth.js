@@ -1,7 +1,6 @@
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
-import { User } from "@/models/User.model";
-import connectToDb from "./dbConfig/db.connect";
+
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [Google],
   secret: process.env.NEXTAUTH_SECRET,
@@ -11,41 +10,20 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         token.idToken = account.id_token;
       }
 
-      if (account && user) {
-        await connectToDb();
-        const dbUser = await User.findOne({
-          email: user.email,
-        });
-        if (dbUser) {
-          token.userId = dbUser._id.toString();
-          console.log("User ID set in token:", token.userId);
-        }
+      if (user) {
+        token.email = user.email;
+        token.name = user.name;
+        token.picture = user.image;
       }
 
       return token;
     },
     async session({ session, token }) {
       session.idToken = token.idToken;
-      session.userId = token.userId;
-      console.log("Session created with userId:", session.userId);
+      session.user.email = token.email;
+      session.user.name = token.name;
+      session.user.image = token.picture;
       return session;
-    },
-  },
-  events: {
-    async signIn({ user, account }) {
-      await connectToDb();
-      const existUser = await User.findOne({
-        email: user.email,
-      });
-      if (!existUser) {
-        const newUser = await User.create({
-          name: user.name,
-          email: user.email,
-          image: user.image,
-          provider: account?.provider,
-        });
-        console.log("New user created with ID:", newUser._id);
-      }
     },
   },
 });
