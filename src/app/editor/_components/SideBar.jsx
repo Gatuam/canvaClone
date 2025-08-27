@@ -15,8 +15,9 @@ import SiderBarChild from "./child/SiderBarChild";
 import BackgroundSetting from "./child/BackgroundSetting";
 import ImageSetting from "./child/ImageSetting";
 import Element from "./child/Element";
-import TopNav from "./child/TopNav";
+import TopNav from "./child/TopNavSettings";
 import AiTransform from "./child/AiTransform";
+import TextSetting from "./child/Text";
 
 function SideBar() {
   const [select, SetSelect] = useState(null);
@@ -59,7 +60,7 @@ function SideBar() {
             {
               icon: <Text className="h-6 w-6" />,
               label: "Font",
-              component: <BackgroundSetting />,
+              component: <TextSetting />,
               description: "Choose stylish fonts that speak volumes.",
             },
             

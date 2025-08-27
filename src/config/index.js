@@ -17,6 +17,8 @@ import {
   Blend,
   CornerUpRightIcon,
   BoxIcon,
+  Text,
+  FileType,
 } from "lucide-react";
 
 import BorderRadius from "@/app/editor/_components/shared/BorderRadius";
@@ -25,6 +27,8 @@ import BoxShadow from "@/app/editor/_components/shared/BoxShadow";
 import FillColor from "@/app/editor/_components/shared/FillColor";
 import Opacity from "@/app/editor/_components/shared/Opacity";
 import Stroke from "@/app/editor/_components/shared/Stroke";
+import fontFamily from "@/app/editor/_components/shared/FontFamily";
+import FontFamily from "@/app/editor/_components/shared/FontFamily";
 
 export const designTypes = [
   {
@@ -232,16 +236,68 @@ export const shapesSettingsList = [
   { name: "Stroke Color", icon: <Square />, component: <Stroke /> },
   { name: "Stroke Width", icon: <Minus />, component: <BorderWidth /> },
   { name: "Opacity", icon: <Blend />, component: <Opacity /> },
-  { name: "Border Radius", icon: <CornerUpRightIcon />, component: <BorderRadius /> },
+  {
+    name: "Border Radius",
+    icon: <CornerUpRightIcon />,
+    component: <BorderRadius />,
+  },
   { name: "Shadow", icon: <BoxIcon />, component: <BoxShadow /> },
 ];
 
 export const AITransformationSettings = [
-  { name: "Background Remove", command: "e-removedotbg", image: "/remove-bg.jpg" },
-  { name: "Change Background", command: "e-removedotbg", image: "/change-bg.jpg", input: true },
-  { name: "Generative Fill", command: "e-gen_fill", image: "/generative-fill.jpg" },
+  {
+    name: "Background Remove",
+    command: "e-removedotbg",
+    image: "/remove-bg.jpg",
+  },
+  {
+    name: "Change Background",
+    command: "e-removedotbg",
+    image: "/change-bg.jpg",
+    input: true,
+  },
+  {
+    name: "Generative Fill",
+    command: "e-gen_fill",
+    image: "/generative-fill.jpg",
+  },
   { name: "Image Upscale", command: "e-upscale", image: "/upscale.jpg" },
   { name: "Face Retouch", command: "e-retouch", image: "/face-retouch.jpg" },
   { name: "Drop Shadow", command: "e-dropshadow", image: "/bw.jpg" },
   { name: "Smart crop", command: "fo-auto", image: "/smartcrop.jpg" },
+];
+
+export const TextSettingsList = [
+  {
+    name: "font Family",
+    icon: <Text />,
+    component: <fontFamily />,
+  },
+];
+
+export const FontFamilyList = [
+  { name: "Arial", font: "Arial" },
+  { name: "Verdana", font: "Verdana" },
+  { name: "Tahoma", font: "Tahoma" },
+  { name: "Helvetica", font: "Helvetica" },
+  { name: "Times New Roman", font: "Times New Roman" },
+  { name: "Georgia", font: "Georgia" },
+  { name: "Courier New", font: "Courier New" },
+  { name: "Roboto", font: "Roboto" },
+  { name: "Open Sans", font: "Open Sans" },
+  { name: "Lato", font: "Lato" },
+  { name: "Montserrat", font: "Montserrat" },
+  { name: "Poppins", font: "Poppins" }
+];
+
+
+
+
+export const fontSettingsList = [
+  { name: "Font", icon: <FileType />, component: <FontFamily /> },
+  { name: "Shadow", icon: <BoxIcon />, component: <BoxShadow /> },
+  { name: "Fill", icon: <Palette />, component: <FillColor /> },
+  { name: "Stroke Color", icon: <Square />, component: <Stroke /> },
+  { name: "Stroke Width", icon: <Minus />, component: <BorderWidth /> },
+  { name: "Opacity", icon: <Blend />, component: <Opacity /> },
 ];

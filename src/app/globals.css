@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Open+Sans&family=Lato&family=Montserrat&family=Poppins&family=Nunito&family=Raleway&family=Merriweather&family=Oswald&family=Source+Sans+Pro&family=Playfair+Display&family=Inconsolata&family=Quicksand&family=PT+Sans&family=Rubik&family=Work+Sans&family=Karla&family=Mulish&family=Manrope&family=Exo+2&family=Fira+Sans&family=Josefin+Sans&family=Cabin&display=swap');
+
 
   html {
     font-family: var(--font-poppins);
@@ -20,3 +22,14 @@
     border-radius: 6px !important;
     font-family: var(--font-poppins)  !important;
   }
+
+
+  .font-con {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.font-con::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+

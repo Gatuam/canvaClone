@@ -10,7 +10,7 @@ const SiderBarChild = ({ select }) => {
             <p className="text-sm tracking-wide text-neutral-500">{select?.description}</p>
           </div>
           <div className="border border-[#1111111b] flex justify-center items-center py-4 px-4  bg-neutral-100 rounded-xl shadow-md space-y-6 cursor-pointer overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden ">
-            {select?.component}
+            {select?.component || null }
           </div>
         </div>
       )}

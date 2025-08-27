@@ -1,4 +1,8 @@
-import { shapesSettingsList } from "@/config";
+import {
+  fontSettingsList,
+  shapesSettingsList,
+  TextSettingsList,
+} from "@/config";
 import React, { useState } from "react";
 import {
   Popover,
@@ -13,10 +17,9 @@ import {
 import { Trash } from "lucide-react";
 import { useCanvasHook } from "../../[slug]/page";
 
-const ShapeSetting = () => {
+const FontSteeings = () => {
   const { canvasEditor } = useCanvasHook();
   const [selectedSetting, setSelectedSetting] = useState(null);
-
   const onDelete = () => {
     if (canvasEditor) {
       const activeObj = canvasEditor.getActiveObject();
@@ -26,10 +29,9 @@ const ShapeSetting = () => {
       }
     }
   };
-
   return (
     <div className="flex flex-col gap-5 items-center justify-center">
-      {shapesSettingsList.map((setting, i) => (
+      {fontSettingsList.map((setting, i) => (
         <div
           className={`w-full h-full cursor-pointer p-2 border border-[#1110] hover:text-purple-500 hover:scale-107 transition-all ease-in-out 
             ${
@@ -40,21 +42,22 @@ const ShapeSetting = () => {
           key={i}
           onClick={() => setSelectedSetting(i)}
         >
-          <Popover>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <div className="flex items-center justify-center">
-                  <PopoverTrigger asChild>
-                    <div className="flex items-center justify-center w-5 h-5">
-                      {setting?.icon}
-                    </div>
-                  </PopoverTrigger>
-                </div>
-              </TooltipTrigger>
+          
+            <Popover >
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <div className="flex items-center justify-center">
+                    <PopoverTrigger asChild>
+                      <div className="flex items-center justify-center w-5 h-5">
+                        {setting?.icon}
+                      </div>
+                    </PopoverTrigger>
+                  </div>
+                </TooltipTrigger>
 
-              <TooltipContent
-                side="right"
-                className="
+                <TooltipContent
+                  side="right"
+                  className="
                   data-[side=right]:slide-in-from-left-2 
                   data-[side=right]:animate-in 
                   duration-200 
@@ -64,16 +67,16 @@ const ShapeSetting = () => {
                   border-[#11111134] 
                   shadow-md
                 "
-              >
-                <h6 className="text-sm">{setting?.name}</h6>
-              </TooltipContent>
-            </Tooltip>
+                >
+                  <h6 className="text-sm">{setting?.name}</h6>
+                </TooltipContent>
+              </Tooltip>
 
-            <PopoverContent className="absolute left-9 -top-10 bg-[#ffffff] border-[#11111132] flex justify-center items-center w-fit">
-              {setting?.component}
-            </PopoverContent>
-          </Popover>
-        </div>
+              <PopoverContent className="absolute left-9 -top-10 bg-[#ffffff] border-[#11111132]  justify-center items-center w-fit">
+                {setting?.component}
+              </PopoverContent>
+            </Popover>
+          </div>
       ))}
 
       <Tooltip>
@@ -104,4 +107,4 @@ const ShapeSetting = () => {
   );
 };
 
-export default ShapeSetting;
+export default FontSteeings;

@@ -5,7 +5,7 @@ import SideBar from "../_components/SideBar";
 import Canvas from "../_components/CanvasEle";
 import React, { useContext, useState } from "react";
 import { CanvasContext } from "@/providers/CanvasContext";
-import TopNav from "../_components/child/TopNav";
+import TopNav from "../_components/child/TopNavSettings";
 
 function Editor() {
   const [canvasEditor, setCanvasEditor] = useState();
@@ -26,7 +26,7 @@ function Editor() {
             <div className="h-[92vh] bg-[#11111120] flex">
               <SideBar></SideBar>
             </div>
-            
+
             <Canvas />
           </div>
         </div>
