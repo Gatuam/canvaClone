@@ -15,8 +15,8 @@ import {
   Slash,
   Minus,
   Blend,
-  CornerUpRightIcon,
-  BoxIcon,
+  CornerUpRight,
+  Box,
   Text,
   FileType,
 } from "lucide-react";
@@ -27,7 +27,6 @@ import BoxShadow from "@/app/editor/_components/shared/BoxShadow";
 import FillColor from "@/app/editor/_components/shared/FillColor";
 import Opacity from "@/app/editor/_components/shared/Opacity";
 import Stroke from "@/app/editor/_components/shared/Stroke";
-import fontFamily from "@/app/editor/_components/shared/FontFamily";
 import FontFamily from "@/app/editor/_components/shared/FontFamily";
 
 export const designTypes = [
@@ -152,28 +151,28 @@ export const textPresets = [
     text: "Add a heading",
     fontSize: 36,
     fontWeight: "bold",
-    fontFamily: "Inter, sans-serid",
+    fontFamily: "Inter, sans-serif",
   },
   {
     name: "Subheading",
     text: "Add a subheading",
     fontSize: 24,
     fontWeight: "bold",
-    fontFamily: "Inter, sans-serid",
+    fontFamily: "Inter, sans-serif",
   },
   {
     name: "Body Text",
     text: "Add a little bit of body text",
     fontSize: 16,
     fontWeight: "normal",
-    fontFamily: "Inter, sans-serid",
+    fontFamily: "Inter, sans-serif",
   },
   {
     name: "Caption",
     text: "Add a caption",
     fontSize: 12,
     fontWeight: "normal",
-    fontFamily: "Inter, sans-serid",
+    fontFamily: "Inter, sans-serif",
     fontStyle: "normal",
   },
 ];
@@ -238,10 +237,10 @@ export const shapesSettingsList = [
   { name: "Opacity", icon: <Blend />, component: <Opacity /> },
   {
     name: "Border Radius",
-    icon: <CornerUpRightIcon />,
+    icon: <CornerUpRight />,
     component: <BorderRadius />,
   },
-  { name: "Shadow", icon: <BoxIcon />, component: <BoxShadow /> },
+  { name: "Shadow", icon: <Box />, component: <BoxShadow /> },
 ];
 
 export const AITransformationSettings = [
@@ -269,9 +268,9 @@ export const AITransformationSettings = [
 
 export const TextSettingsList = [
   {
-    name: "font Family",
+    name: "Font Family",
     icon: <Text />,
-    component: <fontFamily />,
+    component: <FontFamily />,
   },
 ];
 
@@ -290,12 +289,9 @@ export const FontFamilyList = [
   { name: "Poppins", font: "Poppins" }
 ];
 
-
-
-
 export const fontSettingsList = [
   { name: "Font", icon: <FileType />, component: <FontFamily /> },
-  { name: "Shadow", icon: <BoxIcon />, component: <BoxShadow /> },
+  { name: "Shadow", icon: <Box />, component: <BoxShadow /> },
   { name: "Fill", icon: <Palette />, component: <FillColor /> },
   { name: "Stroke Color", icon: <Square />, component: <Stroke /> },
   { name: "Stroke Width", icon: <Minus />, component: <BorderWidth /> },
