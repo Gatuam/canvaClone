@@ -15,7 +15,7 @@ const AiTransform = () => {
   const [selectedAi, setSelectedAi] = useState("");
 
   return (
-    <div>
+    <div className=" flex flex-col justify-center ">
       <CustomImageUpload selectedAi={selectedAi} />
       <div className="grid grid-cols-2 gap-3 py-2">
         {AITransformationSettings.map((feature, i) => (
@@ -25,7 +25,7 @@ const AiTransform = () => {
                 <div
                   // onClick={()=> setSelectedAi(feature)}  todo
 
-                  className="flex flex-col justify-center items-center gap-1 flex-wrap max-w-50 p-2 rounded-lg border border-[#11111165] shadow-xl hover:scale-105 hover:bg-purple-100"
+                  className="flex flex-col justify-center items-center gap-1 flex-wrap  p-2 rounded-lg border border-[#11111165] shadow-xl hover:scale-105 hover:bg-purple-100"
                 >
                   <Image
                     src={feature.image}

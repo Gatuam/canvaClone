@@ -10,6 +10,7 @@ function Images() {
   const { canvasEditor, setCanvasEditor } = useCanvasHook();
   const { designId } = useParams();
   const [loading, setLoading] = useState(false);
+  const [image, setImage] = useState("");
   const imagekit = new ImageKit({
     publicKey: process.env.NEXT_PUBLIC_IMAGEKIT_PUBLIC_KEY,
     privateKey: process.env.NEXT_PUBLIC_IMAGEKIT_PRIVATE_KEY,
@@ -17,23 +18,30 @@ function Images() {
   });
 
   const onFileUpload = async (e) => {
-    try {
-      setLoading(true);
-      const file = e.target.files[0];
-      const imageRef = await imagekit.upload({
-        file: file,
-        fileName: designId + ".jpg",
-        isPublished: true,
-      });
-      const canvasImage = await FabricImage.fromURL(imageRef?.url);
+  try {
+    setLoading(true);
+    const file = e.target.files[0];
+    
+    if (!file) return;
+    
+    const reader = new FileReader();
+    reader.onload = async (event) => {
+      const canvasImage = await FabricImage.fromURL(event.target.result);
       canvasEditor.add(canvasImage);
       canvasEditor.renderAll();
-    } catch (error) {
-      console.log(error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+      
+      setImage("");
+      console.log(event.target.result); // This is your image data URL
+    };
+    reader.readAsDataURL(file);
+    
+  } catch (error) {
+    console.log(error.message);
+  } finally {
+    setLoading(false);
+  }
+}
+
   return (
     <div className="w-full">
       <label htmlFor="file" className="cursor-pointer">

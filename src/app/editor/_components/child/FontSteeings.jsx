@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/tooltip";
 import { Trash } from "lucide-react";
 import { useCanvasHook } from "../../[slug]/page";
+import FontStyle from "../shared/FontStyle";
 
 const FontSteeings = () => {
   const { canvasEditor } = useCanvasHook();
@@ -79,6 +80,8 @@ const FontSteeings = () => {
           </div>
       ))}
 
+      <FontStyle/>
+      
       <Tooltip>
         <TooltipTrigger asChild>
           <Trash
@@ -103,6 +106,7 @@ const FontSteeings = () => {
           <h6 className="text-sm">Delete Object</h6>
         </TooltipContent>
       </Tooltip>
+      
     </div>
   );
 };
