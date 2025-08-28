@@ -2,9 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 import { Crown } from "lucide-react";
-
+import { useRouter } from "next/navigation";
 
 function Banner() {
+  const router = useRouter();
+
+  const handleDesignClick = () => {
+    router.push("/editor/custom-design");
+  };
   return (
     <div className=" rounded-xl overflow-hidden bg-gradient-to-r from-[#04eef6] to-[#233cf4ed] flex flex-col justify-center gap-1 items-center w-full h-50  ">
       <div className="flex flex-col sm:flex-row justify-center items-center ">
@@ -16,7 +21,10 @@ function Banner() {
       <h3 className="text-[12px] tracking-wider text-white block ">
         Design Eye-catching Design with canva
       </h3>
-      <Button className=" text-[#0273fd] bg-white rounded-lg px-5 py-1 mt-2 hover:bg-neutral-200 cursor-pointer">
+      <Button
+        onClick={() => handleDesignClick()}
+        className=" text-[#0273fd] bg-white rounded-lg px-5 py-1 mt-2 hover:bg-neutral-200 cursor-pointer"
+      >
         Start Designing
       </Button>
     </div>

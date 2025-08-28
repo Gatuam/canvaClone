@@ -297,3 +297,22 @@ export const fontSettingsList = [
   { name: "Stroke Width", icon: <Minus />, component: <BorderWidth /> },
   { name: "Opacity", icon: <Blend />, component: <Opacity /> },
 ];
+
+
+export const stickerList =
+[
+  { "name": "Cat Sticker", "link": "/cat.png" },
+  { "name": "Ice Cream Sticker", "link": "/birthday-cake.png" },
+  { "name": "Cupcake Sticker", "link": "/cat-animal.png" },
+  { "name": "Bear Sticker", "link": "/good-night.png" },
+  { "name": "Unicorn Sticker", "link": "/in-love.png" },
+  { "name": "Dog Sticker", "link": "/keep-going.png" },
+  { "name": "Panda Sticker", "link": "/price-tag.png" },
+  { "name": "Fox Sticker", "link": "/proud.png" },
+  { "name": "Bunny Sticker", "link": "/rainbow.png" },
+  { "name": "Sloth Sticker", "link": "/ui-ux.png" },
+  { "name": "Koala Sticker", "link": "/universe.png" },
+  { "name": "Lion Sticker", "link": "/vector.png" },
+  { "name": "Elephant Sticker", "link": "/monstera.png" },
+  { "name": "Penguin Sticker", "link": "/sunflower.png" },
+]

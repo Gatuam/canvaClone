@@ -8,6 +8,7 @@ import {
   Settings,
   Sparkles,
   Square,
+  StickerIcon,
   Text,
 } from "lucide-react";
 import { useState } from "react";
@@ -18,6 +19,7 @@ import Element from "./child/Element";
 import TopNav from "./child/TopNavSettings";
 import AiTransform from "./child/AiTransform";
 import TextSetting from "./child/Text";
+import Sticker from "./shared/Sticker";
 
 function SideBar() {
   const [select, SetSelect] = useState(null);
@@ -63,11 +65,11 @@ function SideBar() {
               component: <TextSetting />,
               description: "Choose stylish fonts that speak volumes.",
             },
-            
+
             {
-              icon: <LayoutTemplate className="h-6 w-6" />,
-              label: "Template",
-              component: <BackgroundSetting />,
+              icon: <StickerIcon className="h-6 w-6" />,
+              label: "Sticker",
+              component: <Sticker />,
               description: "Pick templates to jumpstart your design.",
             },
             {

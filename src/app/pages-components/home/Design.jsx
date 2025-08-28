@@ -1,56 +1,54 @@
 "use client";
-import axios from "axios";
 import { designTypes } from "../../config/index";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 
 function DesignType() {
   const { data: session, status } = useSession();
-  console.log('session', session);
+  console.log("session", session);
   const router = useRouter();
 
-  const createDesign = async (design) => {
-    try {
-      if (status === "loading") {
-        console.log("Session loading...");
-        return;
-      }
-      
-      if (!session) {
-        console.log("No session found");
-        return;
-      }
+  // const createDesign = async (design) => {
+  //   try {
+  //     if (status === "loading") {
+  //       console.log("Session loading...");
+  //       return;
+  //     }
 
-      const res = await axios.post("/api/design", {
-        title: design.label || "Untitled",
-        width: design.width,
-        height: design.height,
-        data: {},
-        imagePreview: "",
-      });
-      
-      router.push('/editor/' + session?.userId);
-      
-    } catch (error) {
-      console.error("Error creating design:", error);
+  //     if (!session) {
+  //       console.log("No session found");
+  //       return;
+  //     }
 
-      if (error.response?.status === 401) {
-        console.log("User not authenticated");
-      } else if (error.response?.status === 404) {
-        console.log("User not found in database");
-      }
-    }
-  };
+  //     const res = await axios.post("/api/design", {
+  //       title: design.label || "Untitled",
+  //       width: design.width,
+  //       height: design.height,
+  //       data: {},
+  //       imagePreview: "",
+  //     });
+
+  //     router.push('/editor/' + session?.user.id);
+
+  //   } catch (error) {
+  //     console.error("Error creating design:", error);
+
+  //     if (error.response?.status === 401) {
+  //       console.log("User not authenticated");
+  //     } else if (error.response?.status === 404) {
+  //       console.log("User not found in database");
+  //     }
+  //   }
+  // };
 
   const handleDesignClick = (design) => {
-    if (status === "loading") return; 
+    if (status === "loading") return;
 
     if (!session) {
       console.log("Please sign in first");
       return;
     }
-    
-    createDesign(design);
+    router.push("/editor/" + session?.user.id);
   };
 
   return (

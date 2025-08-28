@@ -7,7 +7,6 @@ import { useCanvasHook } from "../../[slug]/page";
 
 function Images() {
   const { canvasEditor, setCanvasEditor } = useCanvasHook();
-  const { designId } = useParams();
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState("");
 
