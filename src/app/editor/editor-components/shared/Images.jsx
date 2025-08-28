@@ -1,4 +1,3 @@
-import ImageKit from "imagekit";
 import { Button } from "@/components/ui/button";
 import { useParams } from "next/navigation";
 import { useState } from "react";
@@ -11,36 +10,30 @@ function Images() {
   const { designId } = useParams();
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState("");
-  const imagekit = new ImageKit({
-    publicKey: process.env.NEXT_PUBLIC_IMAGEKIT_PUBLIC_KEY,
-    privateKey: process.env.NEXT_PUBLIC_IMAGEKIT_PRIVATE_KEY,
-    urlEndpoint: process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT,
-  });
 
   const onFileUpload = async (e) => {
-  try {
-    setLoading(true);
-    const file = e.target.files[0];
-    
-    if (!file) return;
-    
-    const reader = new FileReader();
-    reader.onload = async (event) => {
-      const canvasImage = await FabricImage.fromURL(event.target.result);
-      canvasEditor.add(canvasImage);
-      canvasEditor.renderAll();
-      
-      setImage("");
-      console.log(event.target.result); // This is your image data URL
-    };
-    reader.readAsDataURL(file);
-    
-  } catch (error) {
-    console.log(error.message);
-  } finally {
-    setLoading(false);
-  }
-}
+    try {
+      setLoading(true);
+      const file = e.target.files[0];
+
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = async (event) => {
+        const canvasImage = await FabricImage.fromURL(event.target.result);
+        canvasEditor.add(canvasImage);
+        canvasEditor.renderAll();
+
+        setImage("");
+        console.log(event.target.result);
+      };
+      reader.readAsDataURL(file);
+    } catch (error) {
+      console.log(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="w-full">

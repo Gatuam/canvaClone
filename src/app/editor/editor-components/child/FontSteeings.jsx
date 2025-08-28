@@ -103,7 +103,7 @@ const FontSteeings = () => {
             shadow-md
           "
         >
-          <h6 className="text-sm">Delete Object</h6>
+          <h6 className="text-sm text-gray-900">Delete Object</h6>
         </TooltipContent>
       </Tooltip>
       
