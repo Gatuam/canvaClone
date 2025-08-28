@@ -1,11 +1,11 @@
 "use client";
 
-import Banner from "./components/homeCom/Banner";
-import DesignType from "./components/homeCom/Design";
-import TopHeader from "./components/homeCom/Header";
-import SideBar from "./components/homeCom/SideBar";
-import AiFeatures from "./components/homeCom/AiFeature";
-import RecentDesigns from "./components/homeCom/RecentDesign";
+import Banner from "./pages-components/home/Banner";
+import DesignType from "./pages-components/home/Design";
+import TopHeader from "./pages-components/home/Header";
+import SideBar from "./pages-components/home/SideBar";
+import AiFeatures from "./pages-components/home/AiFeature";
+import RecentDesigns from "./pages-components/home/RecentDesign";
 
 export default function Home() {
   return (

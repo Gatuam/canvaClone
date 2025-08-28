@@ -21,13 +21,13 @@ import {
   FileType,
 } from "lucide-react";
 
-import BorderRadius from "@/app/editor/_components/shared/BorderRadius";
-import BorderWidth from "@/app/editor/_components/shared/BorderWidth";
-import BoxShadow from "@/app/editor/_components/shared/BoxShadow";
-import FillColor from "@/app/editor/_components/shared/FillColor";
-import Opacity from "@/app/editor/_components/shared/Opacity";
-import Stroke from "@/app/editor/_components/shared/Stroke";
-import FontFamily from "@/app/editor/_components/shared/FontFamily";
+import BorderRadius from "@/app/editor/editor-components/shared/BorderRadius";
+import BorderWidth from "@/app/editor/editor-components/shared/BorderWidth";
+import BoxShadow from "@/app/editor/editor-components/shared/BoxShadow";
+import FillColor from "@/app/editor/editor-components/shared/FillColor";
+import Opacity from "@/app/editor/editor-components/shared/Opacity";
+import Stroke from "@/app/editor/editor-components/shared/Stroke";
+import FontFamily from "@/app/editor/editor-components/shared/FontFamily";
 
 export const designTypes = [
   {

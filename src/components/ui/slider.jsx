@@ -2,29 +2,8 @@
 
 import * as React from "react"
 import * as SliderPrimitive from "@radix-ui/react-slider"
-import { cva } from "class-variance-authority"
-import { cn } from "@/lib/utils"
 
-const sliderVariants = cva(
-  "relative flex touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col",
-  {
-    variants: {
-      width: {
-        xs: "w-16",
-        sm: "w-24", 
-        md: "w-32",
-        lg: "w-48",
-        xl: "w-64",
-        "2xl": "w-80",
-        full: "w-full",
-        auto: "w-auto",
-      },
-    },
-    defaultVariants: {
-      width: "full",
-    },
-  }
-)
+import { cn } from "@/lib/utils"
 
 function Slider({
   className,
@@ -32,7 +11,6 @@ function Slider({
   value,
   min = 0,
   max = 100,
-  width = "full",
   ...props
 }) {
   const _values = React.useMemo(() =>
@@ -49,7 +27,10 @@ function Slider({
       value={value}
       min={min}
       max={max}
-      className={cn(sliderVariants({ width }), className)}
+      className={cn(
+        "relative flex w-full touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col",
+        className
+      )}
       {...props}>
       <SliderPrimitive.Track
         data-slot="slider-track"

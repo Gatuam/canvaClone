@@ -1,11 +1,11 @@
 "use client";
-import TopHeader from "@/app/components/homeCom/Header";
-import GetDesign from "../_components/child/GetDesign";
-import SideBar from "../_components/SideBar";
-import Canvas from "../_components/CanvasEle";
+import TopHeader from "@/app/pages-components/home/Header";
+import GetDesign from "../editor-components/child/GetDesign";
+import SideBar from "../editor-components/SideBar";
+import Canvas from "../editor-components/CanvasEle";
 import React, { useContext, useState } from "react";
 import { CanvasContext } from "@/providers/CanvasContext";
-import TopNav from "../_components/child/TopNavSettings";
+import TopNav from "../editor-components/child/TopNavSettings";
 
 function Editor() {
   const [canvasEditor, setCanvasEditor] = useState();
