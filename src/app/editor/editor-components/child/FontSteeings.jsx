@@ -73,7 +73,7 @@ const FontSteeings = () => {
                 </TooltipContent>
               </Tooltip>
 
-              <PopoverContent className="absolute left-9 -top-10 bg-[#ffffff] border-[#11111132]  justify-center items-center w-fit">
+              <PopoverContent className="absolute left-9 -top-10 bg-[#ffffff] border-[#11111132]  justify-center items-center max-w-xs mx-auto min-w-55 ">
                 {setting?.component}
               </PopoverContent>
             </Popover>

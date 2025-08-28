@@ -69,7 +69,7 @@ const ShapeSetting = () => {
               </TooltipContent>
             </Tooltip>
 
-            <PopoverContent className="absolute left-9 -top-10 bg-[#ffffff] border-[#11111132] flex justify-center items-center w-fit">
+            <PopoverContent className="absolute left-9 -top-10 bg-[#ffffff] border-[#11111132] flex justify-center items-center max-w-sm w-fit min-w-65 mx-auto ">
               {setting?.component}
             </PopoverContent>
           </Popover>

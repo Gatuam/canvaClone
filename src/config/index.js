@@ -233,6 +233,7 @@ export const ShapeList = [
 export const shapesSettingsList = [
   { name: "Fill", icon: <Palette />, component: <FillColor /> },
   { name: "Stroke Color", icon: <Square />, component: <Stroke /> },
+  { name: "Shadow", icon: <Box />, component: <BoxShadow /> },
   { name: "Stroke Width", icon: <Minus />, component: <BorderWidth /> },
   { name: "Opacity", icon: <Blend />, component: <Opacity /> },
   {
@@ -240,7 +241,7 @@ export const shapesSettingsList = [
     icon: <CornerUpRight />,
     component: <BorderRadius />,
   },
-  { name: "Shadow", icon: <Box />, component: <BoxShadow /> },
+  
 ];
 
 export const AITransformationSettings = [

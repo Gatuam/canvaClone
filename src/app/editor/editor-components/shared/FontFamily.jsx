@@ -19,7 +19,7 @@ const FontFamily = () => {
       {FontFamilyList.map((font, i) => (
         <Button
         onClick={()=> onFontChange(font.font)}
-          className={" cursor-pointer hover:bg-blue-200 bg-gray-200 ml-3 mb-2"}
+          className={" cursor-pointer hover:bg-blue-200 bg-gray-200 ml-3 mb-2 text-gray-900"}
           key={i}
           asChild
         >
